@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
+
+    defaultConfig {
+        applicationId "com.numato.usbgenie"
+        minSdkVersion 26
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    // Tools - UI
+    implementation 'com.norbsoft.typefacehelper:library:0.9.0'
+    implementation ('com.joanzapata.iconify:android-iconify-ionicons:2.2.2'){
+        exclude module: 'support-v4'
+    }
+    // Tools - UI Animation
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.easing:library:2.1@aar'
+    implementation 'com.daimajia.androidanimations:library:2.3@aar'
+    // Tools - Dependency Injection
+    implementation 'com.jakewharton:butterknife:8.8.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.0'
+//    implementation 'com.jakewharton:butterknife:7.0.1'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:7.0.1'
+    //Switch
+    implementation 'com.kyleduo.switchbutton:library:2.0.0'
+}
